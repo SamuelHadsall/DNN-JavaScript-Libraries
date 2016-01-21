@@ -1,0 +1,36 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="knockout" type="JavaScript_Library" version="3.4.0">
+      <friendlyName>Knockout JavaScript Library</friendlyName>
+      <description><![CDATA[Knockout is an MVVM library that is used for client side databinding.]]></description>
+      <owner>
+        <name>SteadyRain</name>
+        <organization>SteadyRain</organization>
+        <url>http://www.SteadyRain.com</url>
+        <email>opensource@SteadyRain.com</email>
+      </owner>
+      <license src="LICENSE.htm" />
+      <releaseNotes src="CHANGES.htm" />
+      <azureCompatible>true</azureCompatible>
+      <components>
+        <component type="JavaScript_Library">
+          <javaScriptLibrary>
+            <libraryName>knockout</libraryName>
+            <fileName>knockout.js</fileName>
+            <preferredScriptLocation>PageHead</preferredScriptLocation>
+            <CDNPath>https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js</CDNPath>
+            <objectName>ko</objectName>
+          </javaScriptLibrary>
+        </component>
+        <component type="JavaScriptFile">
+          <jsfiles>
+            <libraryFolderName>knockout</libraryFolderName>
+            <jsfile>
+              <name>knockout.js</name>
+            </jsfile>
+          </jsfiles>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

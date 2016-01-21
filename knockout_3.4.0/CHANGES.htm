@@ -1,0 +1,28 @@
+<article style="max-height: 20em; overflow: auto;">
+<h1>3.4.0 (2015-11-16)</h1>
+
+<h2>New features and bug fixes</h2>
+
+<ul>
+<li>Improves performance of components, templates, computeds, and observables.</li>
+<li>Includes a native version of deferred updates, along with a microtask queue (ko.tasks).</li>
+<li>Calls a ko.onError handler, if defined, for errors from asynchronous code.</li>
+<li>ko.options.useOnlyNativeEvents can be set to tell Knockout to use only native (not jQuery) events.</li>
+<li>Includes ko.isPureComputed().</li>
+</ul>
+
+<h3>The 3.4.0 RC release notes has the full list of issues and pull requests included in this release. The final release fixes two regression bugs found in the RC:</h3>
+
+<ul>
+<li>#1903 - New beforeRemove behavior can break retained items.</li>
+<li>#1905 - Endless recursion possible with ko.computed.</li>
+</ul>
+
+<h3>Possible compatibility issues</h3>
+
+<ul>
+<li>Components now use microtasks to perform updates asynchronously instead of setTimeout. Since microtasks are run before the browser repaints the page, all loaded components will be initialized and displayed in a single repaint. Although this reduces the overall time needed to display components, it could result in a longer delay before anything is displayed.</li>
+<li>The new, native deferred updates feature has a slightly different API and is implemented differently than the Deferred Updates plugin. Migrating from the plugin will generally require some code changes (full details to come soon).</li>
+<li>ko.observable and ko.computed no longer use a closure when defining their methods, such as dispose and valueHasMutated. These functions expect this to be set correctly and so can't be used directly as a callback. Instead you'll need to use bind, such as obs.dispose.bind(obs).</li>
+</ul>
+
